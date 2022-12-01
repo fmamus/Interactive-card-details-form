@@ -7,7 +7,7 @@ const button = document.getElementById('button');
 
 cardNumber.addEventListener('keyup', () => {
     if (cardNumber.value.length > 16) {
-        cardNumber.value = cardNumber.value.slice(0, 16);
+        cardNumber.value = cardNumber.value.slice(0, 19);
     }
 })
 
@@ -65,6 +65,14 @@ button.addEventListener('click', () => {
     }
 })
 
+cardNumber.addEventListener('keyup', () => {
+    if (cardNumber.value.length != 19) {
+        cardNumber.style.borderColor = "hsl(0, 100%, 66%)";
+    } else {
+        cardNumber.style.borderColor = "hsl(270, 3%, 87%)";
+    }
+})
+
 cardNumber.addEventListener('keydown', () =>{
     if(cardNumber.value.length != 0){
         return;
@@ -72,6 +80,10 @@ cardNumber.addEventListener('keydown', () =>{
     document.getElementById("cardValidMessage").style.display = "none";
     cardNumber.style.borderColor = "hsl(270, 3%, 87%)";
 })
+
+cardNumber.addEventListener('input', function (e) {
+    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+  });
 
 //Card Date
 
@@ -121,7 +133,7 @@ button.addEventListener('click', () => {
 })
 
 cardDateYear.addEventListener('keyup', () => {
-    if (cardDateYear.value < 1 || cardDateYear.value > 99) {
+    if (cardDateYear.value < new Date().getFullYear().toString().slice(-2)) {
         cardDateYear.style.borderColor = "hsl(0, 100%, 66%)";
     } else {
         cardDateYear.style.borderColor = "hsl(270, 3%, 87%)";
@@ -136,6 +148,14 @@ button.addEventListener('click', () => {
         cardCvc.style.borderColor = "hsl(0, 100%, 66%)";
     } else {
         document.getElementById("cvcValidMessage").style.display = "none";
+        cardCvc.style.borderColor = "hsl(270, 3%, 87%)";
+    }
+})
+
+button.addEventListener('click', () => {
+    if (cardCvc.value.length > 0 && cardCvc.value.length < 3) {
+        cardCvc.style.borderColor = "hsl(0, 100%, 66%)";
+    } else {
         cardCvc.style.borderColor = "hsl(270, 3%, 87%)";
     }
 })

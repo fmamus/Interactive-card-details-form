@@ -25,15 +25,31 @@ input::-webkit-inner-spin-button {
 ::placeholder {
     color: var(--LightGrayishViolet);
     opacity: 1; /* Firefox */
-  }
+}
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color: var(--LightGrayishViolet);
-  }
+}
   
   ::-ms-input-placeholder { /* Microsoft Edge */
    color: var(--LightGrayishViolet);
-  }
+}
+  
+::-webkit-input-placeholder { /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    text-transform: none;
+}
+::placeholder { /* Recent browsers */
+    text-transform: none;
+}  
 
 span{
     color: var(--red);
@@ -72,6 +88,10 @@ span{
 #right-side .container .form{
     display: flex;
     flex-direction: column;
+}
+
+#right-side .container .form #name{
+    text-transform: uppercase;
 }
 
 #right-side .container .form input{
