@@ -5,6 +5,7 @@
     --LightGrayishViolet: hsl(270, 3%, 87%);
     --DarkGrayishViolet: hsl(279, 6%, 55%);
     --VeryDarkViolet: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
 }
 
 *{
@@ -27,12 +28,25 @@ input::-webkit-inner-spin-button {
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: red;
+   color: var(--LightGrayishViolet);
   }
   
   ::-ms-input-placeholder { /* Microsoft Edge */
-   color: red;
+   color: var(--LightGrayishViolet);
   }
+
+span{
+    color: var(--red);
+    font-size: .65rem;
+    display: none;
+    margin-top: .6rem;
+}
+
+.name,
+.card-number,
+.card-date{
+    margin-bottom: 1rem;
+}
 
 #left-side{
     width: 30%;
@@ -70,7 +84,6 @@ input::-webkit-inner-spin-button {
     border: 1px solid var(--LightGrayishViolet);
     border-radius: 10px;
     margin-top: .5rem;
-    margin-bottom: 2rem;
 }
 
 #right-side .container .form input:focus{
@@ -99,7 +112,8 @@ input::-webkit-inner-spin-button {
     width: 50%;
 }
 
-.button button{
+#button button{
+    cursor: pointer;
     padding: 1rem 0;
     border: none;
     width: 100%;

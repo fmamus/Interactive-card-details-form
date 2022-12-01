@@ -25,23 +25,27 @@
         <div class="name">
           <label for="name">cardholder name</label>
           <input type="text" id="name" placeholder="e.g. Jane Appleseed">
+          <span id="nameValidMessage">Can't be blank</span>
         </div>
         <div class="card-number">
           <label for="card-number">card number</label>
           <input type="number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+          <span id="cardValidMessage">Can't be blank</span>
         </div>
         <div class="date-field">
           <div class="card-date">
             <label for="card-date">exp. date (mm/yy)</label>
             <input type="number" id="card-date-month" placeholder="MM">
             <input type="number" id="card-date-year" placeholder="YY">
+            <span id="dateValidMessage">Can't be blank</span>
           </div>
           <div class="card-cvc">
             <label for="card-cvc">cvc</label>
             <input type="number" maxlength="3" id="card-cvc" placeholder="e.g. 123">
+            <span id="cvcValidMessage">Can't be blank</span>
           </div>
         </div>
-        <div class="button">
+        <div id="button">
           <button>Confirm</button>
         </div>
       </div>
