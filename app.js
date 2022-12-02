@@ -5,6 +5,8 @@ const cardDateYear = document.getElementById('card-date-year');
 const cardCvc = document.getElementById('card-cvc');
 const button = document.getElementById('button');
 
+const regName = /^[a-zA-Z]+( [a-zA-Z]+)+$/;
+
 cardNumber.addEventListener('keyup', () => {
     if (cardNumber.value.length > 16) {
         cardNumber.value = cardNumber.value.slice(0, 19);
@@ -35,22 +37,26 @@ cardCvc.addEventListener('keyup', () => {
 
 //Name
 
-button.addEventListener('click', () => {
-    if (userName.value.length == 0) {
+button.addEventListener('click', () =>{
+    if(regName.test(userName.value) === false){
+        userName.style.borderColor = "hsl(0, 100%, 66%)";
+        document.getElementById("nameValidMessage").style.display = "block";
+    }else{
+        userName.style.borderColor = "hsl(270, 3%, 87%)";
+        document.getElementById("nameValidMessage").style.display = "none";
+    }
+    console.log(regName.test(userName.value));
+})
+
+
+userName.addEventListener('keydown', () =>{
+    if(!regName.test(userName.value)){
         document.getElementById("nameValidMessage").style.display = "block";
         userName.style.borderColor = "hsl(0, 100%, 66%)";
-    } else {
+    }else{
         document.getElementById("nameValidMessage").style.display = "none";
         userName.style.borderColor = "hsl(270, 3%, 87%)";
     }
-})
-
-userName.addEventListener('keydown', () =>{
-    if(userName.value.length != 0){
-        return;
-    }
-    document.getElementById("nameValidMessage").style.display = "none";
-    userName.style.borderColor = "hsl(270, 3%, 87%)";
 })
 
 //Card Number
@@ -127,7 +133,11 @@ cardDateMonth.addEventListener('keyup', () => {
 button.addEventListener('click', () => {
     if (cardDateYear.value.length == 0) {
         cardDateYear.style.borderColor = "hsl(0, 100%, 66%)";
-    } else {
+    } 
+    else if (cardDateYear.value < new Date().getFullYear().toString().slice(-2)) {
+        cardDateYear.style.borderColor = "hsl(0, 100%, 66%)";
+    }
+    else {
         cardDateYear.style.borderColor = "hsl(270, 3%, 87%)";
     }
 })
@@ -146,16 +156,12 @@ button.addEventListener('click', () => {
     if (cardCvc.value.length == 0) {
         document.getElementById("cvcValidMessage").style.display = "block";
         cardCvc.style.borderColor = "hsl(0, 100%, 66%)";
-    } else {
-        document.getElementById("cvcValidMessage").style.display = "none";
-        cardCvc.style.borderColor = "hsl(270, 3%, 87%)";
     }
-})
-
-button.addEventListener('click', () => {
-    if (cardCvc.value.length > 0 && cardCvc.value.length < 3) {
+    else if(cardCvc.value.length < 3 && cardCvc.value.length > 0){
         cardCvc.style.borderColor = "hsl(0, 100%, 66%)";
-    } else {
+    }
+    else{
+        document.getElementById("cvcValidMessage").style.display = "none";
         cardCvc.style.borderColor = "hsl(270, 3%, 87%)";
     }
 })

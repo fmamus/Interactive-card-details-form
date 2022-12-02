@@ -18,14 +18,41 @@
 </head>
 <body>
 
-  <div id="left-side"></div>
+  <div id="left-side">
+    <div class="card">
+      <div id="card-front">
+        <div class="card-logos">
+          <div id="logo"></div>
+          <div id="smallCircle"></div>
+        </div>
+        <div class="card-number">
+          <div class="card-number-on-card">
+            <p>9591 6489 6389 1011</p>
+          </div>
+        </div>
+        <div class="card-name-date">
+          <div class="card-name-on-card">
+            <p>Felicia Leire</p>
+          </div>
+          <div class="card-date-on-card">
+            <p>09/26</p>
+          </div>
+        </div>
+      </div>
+      <div id="card-back">
+        <div class="card-cvc-on-card">
+          <p>123</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="right-side">
     <div class="container">
       <div class="form">
         <div class="name">
           <label for="name">cardholder name</label>
           <input type="text" id="name" placeholder="e.g. Jane Appleseed">
-          <span id="nameValidMessage">Can't be blank</span>
+          <span id="nameValidMessage">Invalid Name</span>
         </div>
         <div class="card-number">
           <label for="card-number">card number</label>
@@ -50,12 +77,11 @@
         </div>
       </div>
     </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Furkan Mamus</a>.
+    </div>
   </div>
-  
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Furkan Mamus</a>.
-  </div> -->
 
   <script src="app.js"></script>
 </body>

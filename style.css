@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap');
 
 :root{
     --white: hsl(0, 0%, 100%);
@@ -62,6 +62,93 @@ span{
 .card-number,
 .card-date{
     margin-bottom: 1rem;
+}
+
+.card{
+    position: relative;
+    top: 15%;
+    left: 40%
+}
+
+#card-front,
+#card-back{
+    width: 24rem;
+    height: 15rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: relative;
+    color: #fff;
+}
+
+#card-front{
+    background-image: url('images/bg-card-front.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+#card-front .card-logos{
+    display: flex;
+    align-items: center;
+}
+
+#card-front .card-number{
+    margin-top: 4rem;
+}
+
+#card-front .card-number .card-number-on-card p{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+#card-front .card-name-date{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#card-front .card-name-date p{
+    font-size: .8rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    opacity: .7;
+    text-transform: uppercase;
+}
+
+#card-front #logo{
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#card-front #smallCircle{
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#card-back{
+    background-image: url('images/bg-card-back.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+#card-back .card-cvc-on-card p{
+    letter-spacing: 2px;
+    font-size: .75rem;
 }
 
 #left-side{
@@ -150,4 +237,10 @@ span{
                       linear-gradient(to right, orange, yellow);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-  }
+}
+
+#right-side .attribution{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
