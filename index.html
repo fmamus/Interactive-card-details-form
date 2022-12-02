@@ -48,7 +48,7 @@
   </div>
   <div id="right-side">
     <div class="container">
-      <div class="form">
+      <div id="form">
         <div class="name">
           <label for="name">cardholder name</label>
           <input type="text" id="name" placeholder="e.g. Jane Appleseed">
@@ -72,8 +72,18 @@
             <span id="cvcValidMessage">Can't be blank</span>
           </div>
         </div>
-        <div id="button">
+        <div class="button">
           <button>Confirm</button>
+        </div>
+      </div>
+      <div id="success-display">
+        <div class="success-icon-message">
+          <img src="/images/icon-complete.svg" alt="okey-icon">
+          <h2>Thank You!</h2>
+          <p>We've added your card details</p>
+        </div>
+        <div class="button">
+          <button>Continue</button>
         </div>
       </div>
     </div>

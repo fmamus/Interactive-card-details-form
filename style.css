@@ -172,16 +172,16 @@ span{
     width: 25%;
 }
 
-#right-side .container .form{
+#right-side .container #form{
     display: flex;
     flex-direction: column;
 }
 
-#right-side .container .form #name{
+#right-side .container #form #name{
     text-transform: uppercase;
 }
 
-#right-side .container .form input{
+#right-side .container #form input{
     width: 100%;
     height: 3rem;
     font-size: 1.125rem;
@@ -193,33 +193,58 @@ span{
     margin-top: .5rem;
 }
 
-#right-side .container .form input:focus{
+#right-side .container #form input:focus{
 }
 
-#right-side .container .form label{
+#right-side .container #form label{
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--VeryDarkViolet);
     font-size: 0.75rem;
 }
 
-#right-side .container .form .date-field{
+#right-side .container #form .date-field{
     display: flex;
 }
 
-#right-side .container .form .card-date{
+#right-side .container #form .card-date{
     width: 50%;
 }
 
-#right-side .container .form .card-date input{
+#right-side .container #form .card-date input{
     width: 45%;
 }
 
-#right-side .container .form .card-cvc{
+#right-side .container #form .card-cvc{
     width: 50%;
 }
 
-#button button{
+#success-display{
+    display: none;
+}
+
+.success-icon-message{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.success-icon-message h2{
+    color: var(--VeryDarkViolet);
+    margin-top: 2.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.success-icon-message p{
+    color: var(--DarkGrayishViolet);
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.button button{
     cursor: pointer;
     padding: 1rem 0;
     border: none;
